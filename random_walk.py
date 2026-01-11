@@ -1,6 +1,5 @@
 import math
 import random
-import numpy as np
 
 def random_walk(n=10000, l=1):
     x = [0]
@@ -11,5 +10,4 @@ def random_walk(n=10000, l=1):
         dy = l * math.sin(theta)
         x.append(x[i-1] + dx)
         y.append(y[i-1] + dy)
-    return np.array(x), np.array(y)
-
+    return x, y
