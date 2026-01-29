@@ -15,9 +15,10 @@ def read_novel(novel_path):
                 break
 
             if line:
-                # normalise apostrophes + lowercase
-                line = line.lower().replace("’", "'")
-                lines.append(line)
+                if not line.lower().startswith("chapter"):
+                    # normalise apostrophes + lowercase
+                    line = line.lower().replace("’", "'")
+                    lines.append(line)
 
     return lines
 
