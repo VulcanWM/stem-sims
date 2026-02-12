@@ -18,16 +18,6 @@ def split_in_half():
     return num
 
 def card_shuffle(n):
-    probs = {}
-    for i in range(0, total + 1):
-        prob = math.comb(total, i) * 0.5 ** total
-        probs[i] = prob
-
-    suits = ["H", "D", "C", "S"]
-    ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-    deck = [f"{rank} {suit}" for suit in suits for rank in ranks]
-
     for _ in range(n):
         left = split_in_half()
         right = total - left
