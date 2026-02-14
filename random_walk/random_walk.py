@@ -11,3 +11,5 @@ def random_walk(n=10000, l=1):
         x.append(x[i-1] + dx)
         y.append(y[i-1] + dy)
     return x, y
+
+print(random_walk(10000, 1))

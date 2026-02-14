@@ -73,6 +73,44 @@ Clarity matters more than cleverness.
 
 This is a place to explore ideas, not to show off.
 
+## How To Run
+
+After downloading or cloning the repository, navigate into any simulation folder:
+
+```bash
+git clone https://github.com/your-username/stem-sims.git
+cd stem-sims
+```
+
+Then move into a specific simulation directory, for example:
+
+```bash
+cd page_rank
+```
+
+Each simulation file is standalone. It contains:
+- the core simulation function  
+- an example function call at the bottom of the file  
+
+To experiment:
+
+1. Open the file in your editor  
+2. Modify the example function call at the bottom to change parameters or inputs  
+3. Run the file using the appropriate language runtime  
+
+For example, in Python:
+
+```bash
+python page_rank.py
+```
+
+Most simulations:
+- require no external libraries  
+- run on standard language installations  
+- are designed to work out of the box  
+
+You can explore freely by adjusting the input values in the example call and re running the file.
+
 ## Closing note
 
 If you enjoy maths, simulations, or translating ideas between programming languages, you will probably feel at home here.

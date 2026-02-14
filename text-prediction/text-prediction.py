@@ -65,11 +65,8 @@ def predict_text(model, starting_token, n_grams=3):
     return text
 
 novel_lines = read_novel("jane-eyre.txt")
-print("number of lines =", len(novel_lines))
 
 cleaned_text = tokenize(novel_lines)
-
-print("Number of words =", len(cleaned_text))
 
 model = create_model(cleaned_text, 3)
 

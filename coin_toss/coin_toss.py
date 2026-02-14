@@ -6,3 +6,5 @@ def coin_toss(n=10000):
         toss = random.choice(list(count.keys()))
         count[toss] += 1
     return count
+
+print(coin_toss(10000))

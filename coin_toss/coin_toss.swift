@@ -6,3 +6,5 @@ func coin_toss(n: Int = 10000) -> [String: Int] {
     }
     return count
 }
+
+print(coin_toss(10000))

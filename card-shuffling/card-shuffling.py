@@ -1,25 +1,20 @@
 import random
 import math
 
-total = 52
-
-probs = {}
-for i in range(0, total+1):
-    prob = math.comb(total, i) * 0.5**total
-    probs[i] = prob
-
-suits = ["H", "D", "C", "S"]
-ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-deck = [f"{rank} {suit}" for suit in suits for rank in ranks]
-
-def split_in_half():
-    num = random.choices(list(probs.keys()), weights=list(probs.values()), k=1)[0]
-    return num
-
 def card_shuffle(n):
+    total = 52
+
+    probs = {}
+    for i in range(0, total+1):
+        prob = math.comb(total, i) * 0.5**total
+        probs[i] = prob
+
+    suits = ["H", "D", "C", "S"]
+    ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+    deck = [f"{rank} {suit}" for suit in suits for rank in ranks]
     for _ in range(n):
-        left = split_in_half()
+        left = random.choices(list(probs.keys()), weights=list(probs.values()), k=1)[0]
         right = total - left
         leftArr = deck[:left]
         rightArr = deck[left:]
