@@ -1,4 +1,4 @@
-function randomWalk(n = 10000, l = 1) {
+function random_walk(n = 10000, l = 1) {
     const x = [0];
     const y = [0];
 
@@ -12,3 +12,5 @@ function randomWalk(n = 10000, l = 1) {
 
     return { x, y };
 }
+
+console.log(random_walk(10000, 1))

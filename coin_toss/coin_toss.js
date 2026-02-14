@@ -10,3 +10,5 @@ function coin_toss(n=10000){
     }
     return count
 }
+
+console.log(coin_toss(10000))
