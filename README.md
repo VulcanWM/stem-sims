@@ -74,11 +74,20 @@ Clarity matters more than cleverness.
 This is a place to explore ideas, not to show off.
 
 ## How To Run
+### Method 1: Download Executable
+**quick start (no setup required)**
+
+1. go to the releases page
+2. download the latest executable for your system
+3. run the file
+4. choose a simulation from the menu
+
+## Method 2: Run from Source
 
 After downloading or cloning the repository, navigate into any simulation folder:
 
 ```bash
-git clone https://github.com/your-username/stem-sims.git
+git clone https://github.com/VulcanWM/stem-sims.git
 cd stem-sims
 ```
 
@@ -90,7 +99,7 @@ cd page_rank
 
 Each simulation file is standalone. It contains:
 - the core simulation function  
-- an example function call at the bottom of the file  
+- an example to call at the bottom of the file  
 
 To experiment:
 
