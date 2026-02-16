@@ -34,4 +34,8 @@ def card_shuffle(n):
         deck = newDeck
     return deck
 
-print(card_shuffle(10))
+def example():
+    print(card_shuffle(10))
+
+if __name__ == "__main__":
+    example()

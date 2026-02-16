@@ -16,4 +16,8 @@ def page_rank(outbound_links, damping_factor=0.85, n=10000):
         count[key] = round(count[key] / n * 100, 3)
     return count
 
-print(page_rank({1: [2, 3], 2: [3], 3: [1]}, damping_factor=0.85, n=1000000))
+def example():
+    print(page_rank({1: [2, 3], 2: [3], 3: [1]}, damping_factor=0.85, n=1000000))
+
+if __name__ == "__main__":
+    example()

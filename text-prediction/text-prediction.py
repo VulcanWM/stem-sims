@@ -64,12 +64,16 @@ def predict_text(model, starting_token, n_grams=3):
         last_token = " ".join(words_in_text[n_grams * -1:])
     return text
 
-novel_lines = read_novel("jane-eyre.txt")
+def example():
+    novel_lines = read_novel("jane-eyre.txt")
 
-cleaned_text = tokenize(novel_lines)
+    cleaned_text = tokenize(novel_lines)
 
-model = create_model(cleaned_text, 3)
+    model = create_model(cleaned_text, 3)
 
-starting_token = 'mr rochester and'
-text = predict_text(model, starting_token, 3)
-print(text)
+    starting_token = 'mr rochester and'
+    text = predict_text(model, starting_token, 3)
+    print(text)
+
+if __name__ == "__main__":
+    example()

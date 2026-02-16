@@ -7,4 +7,8 @@ def coin_toss(n=10000):
         count[toss] += 1
     return count
 
-print(coin_toss(10000))
+def example():
+    print(coin_toss(10000))
+
+if __name__ == "__main__":
+    example()

@@ -12,4 +12,8 @@ def random_walk(n=10000, l=1):
         y.append(y[i-1] + dy)
     return x, y
 
-print(random_walk(10000, 1))
+def example():
+    print(random_walk(10000, 1))
+
+if __name__ == "__main__":
+    example()
