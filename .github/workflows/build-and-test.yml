@@ -1,0 +1,36 @@
+name: build-and-test-windows-exe
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2025
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: install dependencies
+        run: |
+          pip install pyinstaller
+          # add any other pip packages your code needs here
+
+      - name: build exe
+        run: pyinstaller --onefile --console main.py
+
+      - name: test exe
+        run: |
+          echo "running main.exe..."
+          dist\main.exe
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-exe
+          path: dist/main.exe
