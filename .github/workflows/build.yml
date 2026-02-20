@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2025
 
     steps:
       - name: checkout repo
@@ -20,7 +20,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: build exe
-        run: pyinstaller --onefile main.py
+        run: pyinstaller --onefile --console main.py
 
       - name: upload artifact
         uses: actions/upload-artifact@v4
