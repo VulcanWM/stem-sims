@@ -22,7 +22,7 @@ jobs:
           # add any other pip packages your code needs here
 
       - name: build exe
-        run: pyinstaller --onefile --console main.py
+        run: pyinstaller --onefile --console main.py --paths=.
 
       - name: test exe
         run: |
