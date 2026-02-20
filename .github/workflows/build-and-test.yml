@@ -24,13 +24,13 @@ jobs:
       - name: build exe
         run: pyinstaller --onefile --console main.py --paths=. --add-data "text_prediction/jane-eyre.txt;text_prediction"
 
-      - name: test exe
-        run: |
-          echo "running main.exe..."
-          dist\main.exe
-
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: windows-exe
           path: dist/main.exe
+
+      - name: test exe
+        run: |
+          echo "running main.exe..."
+          dist\main.exe
