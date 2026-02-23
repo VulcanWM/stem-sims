@@ -1,11 +1,18 @@
 import random
-
 import re
+import os
+import sys
 
 word_pattern = re.compile(r"[^\W\d_]+(?:['’][^\W\d_]+)*", re.UNICODE)
 
+def read_novel(filename):
+    if hasattr(sys, "_MEIPASS"):
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.dirname(__file__)
 
-def read_novel(novel_path):
+    novel_path = os.path.join(base_path, filename)
+
     lines = []
     with open(novel_path, 'r', encoding='utf-8') as f:
         for line in f:
@@ -16,7 +23,6 @@ def read_novel(novel_path):
 
             if line:
                 if not line.lower().startswith("chapter"):
-                    # normalise apostrophes + lowercase
                     line = line.lower().replace("’", "'")
                     lines.append(line)
 
