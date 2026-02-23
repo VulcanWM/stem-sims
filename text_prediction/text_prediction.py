@@ -11,20 +11,24 @@ def read_novel(filename):
     else:
         base_path = os.path.dirname(__file__)
 
+    # try same folder first
     novel_path = os.path.join(base_path, filename)
 
-    lines = []
-    with open(novel_path, 'r', encoding='utf-8') as f:
+    # fallback: try inside text_prediction folder
+    if not os.path.exists(novel_path):
+        novel_path = os.path.join(base_path, "text_prediction", filename)
+
+    with open(novel_path, "r", encoding="utf-8") as f:
+        lines = []
         for line in f:
             line = line.strip()
 
-            if line == '----------':
+            if line == "----------":
                 break
 
-            if line:
-                if not line.lower().startswith("chapter"):
-                    line = line.lower().replace("’", "'")
-                    lines.append(line)
+            if line and not line.lower().startswith("chapter"):
+                line = line.lower().replace("’", "'")
+                lines.append(line)
 
     return lines
 
